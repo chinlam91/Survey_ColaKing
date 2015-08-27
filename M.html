@@ -1,0 +1,273 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css"> //
+</head>
+
+<body>
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="nav nav-pills">
+                        <li class="active">
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">Profile</a>
+                        </li>
+                        <li>
+                            <a href="#">Messages</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-left text-primary">Create Your Own Survey</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <!--left side-->
+                <div class="col-md-6">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#template1">Template 1</a>
+                        </li>
+                        <li>
+                            <a href="#template2">Template 2</a>
+                        </li>
+                        <li>
+                            <a href="#template3">Template 3</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <!--Template 1-->
+                        <div id="template1" class="tab-pane fade in active" style="padding-top:20px">
+                            <form role="form">
+                                <div class="form-group">
+                                    <label for="title">
+                                        Title
+                                    </label>
+                                    <input type="text" class="form-control" id="titleInput1" placeholder="Input Title" />
+                                    <label for="content" style="padding-top:10px">
+                                        Content Hint
+                                    </label>
+                                    <input type="text" class="form-control" id="hintText1" placeholder="Input Hint Text to Volunteer" />
+                                    <br>
+                                    <button onclick="button1()" class="btn btn-primary">Add</button>
+                                </div>
+                        </div>
+                        <!--Template 2-->
+                        <div id="template2" class="tab-pane fade in" style="padding-top:20px">
+                            <form role="form">
+                                <div class="form-group">
+                                    <label for="title">
+                                        Title
+                                    </label>
+                                    <input type="text" class="form-control" id="titleInput2" placeholder="Input Title" />
+                                    <!-- Title -->
+                                    <label style="padding-top:10px">
+                                        <input type="radio" name="check" value="1" id="radio1" checked> CheckBox
+                                        <img src="http://ccrs.biz/wp-content/uploads/2014/12/check-box2.jpg" style="height:20px;weight:10px">
+                                    </label>
+                                    <br>
+                                    <label style="padding-top:10px">
+                                        <input type="radio" name="check" value="1" id="radio2"> RadioButton
+                                        <img src="http://www.veryicon.com/icon/png/System/Blueberry%20Basic/radio%20button%20on.png" style="height:20px;weight:10px">
+                                    </label>
+                                    <br>
+                                    <label style="padding-top:10px">
+                                        <input type="radio" name="check" value="1" id="radio3">Optional
+                                        <img src="http://cdn0.techbang.com.tw/system/images/174427/medium/ae3c3004d8a8cc5734bca12c07cc4a9c.png?1407982994" style="height:20px;weight:10px">
+                                    </label>
+                                    <br>
+                                    <input type="button" value="+" id="add_element">
+                                    <input type="button" value="-" id="del_element">
+                                    <br>
+                                    <p></p>
+                                    <button onclick="button2()" class="btn btn-primary">Add</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!--Template 3-->
+                        <div id="template3" class="tab-pane fade in" style="padding-top:20px">
+                            <form role="form">
+                                <div class="form-group">
+                                    <label for="title">
+                                        Title
+                                    </label>
+                                    <input type="text" class="form-control" id="titleInput" placeholder="Input Title" />
+                                    <!-- Title -->
+                                    <label style="padding-top:10px">
+                                        <input type="radio" name="check" value="1" checked> Date
+                                        <img src="http://ipad.tgbus.com/zt/ipadxs/images/rl.png" style="height:20px;weight:10px">
+                                    </label>
+                                    <br>
+                                    <label style="padding-top:10px">
+                                        <input type="radio" name="check" value="1"> Time
+                                        <img src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/128/time.png" style="height:20px;weight:10px">
+                                    </label>
+                                    <br>
+                                    <input type="button" value="+" id="add_element">
+                                    <input type="button" value="-" id="del_element">
+                                    <br>
+                                    <br>
+                                    <button onclick="button3()" class="btn btn-primary">Add</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--right side-->
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-5">
+                    <form role="form">
+                        <div class="form-group">
+                            <label>Preview</label>
+                            <hr>
+                            <div class="addTemplate"></div>
+                            <button onclick="submit()" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script>
+        var counter = 0;
+
+        function button1() {
+
+            //Template 1 title
+            var text = document.createElement("label");
+            $(text).text(document.getElementById('titleInput1').value);
+            $(text).appendTo("div.addTemplate");
+            $("<br>").appendTo("div.addTemplate");
+
+            //Template 1 textbar
+            var textbar = $(document.createElement('input')).attr({
+                type: "text",
+                class: "form-control",
+                placeholder: document.getElementById('hintText1').value
+
+            });
+
+            $(textbar).appendTo("div.addTemplate");
+            $("<br>").appendTo("div.addTemplate");
+        }
+
+        function button2() {
+            var title = document.createElement('label');
+            $(title).text(document.getElementById('titleInput2').value);
+            $(title).appendTo("div.addTemplate");
+            $("<br>").appendTo("div.addTemplate");
+
+
+            var obj = 0;
+            if (document.getElementById('radio1').checked) {
+                obj = 1;
+
+            } else if (document.getElementById('radio2').checked) {
+                obj = 2;
+            } else {
+                obj = 3;
+            }
+
+            switch (obj) {
+                case 1:
+                    var i;
+                    for (i = 0; i < counter; i++) {
+                        // <!--dynamic create checkbox -->
+                        var temp = "textbox" + i;
+                        var textbox = document.getElementById(temp).value;
+
+                        var newTextBoxDiv = $(document.createElement('label'));
+                        newTextBoxDiv.after().html('<input type="checkbox" name="textbox' + counter +
+                            '" id="textbox' + counter + '" value="1" > ' + textbox + '');
+
+                        newTextBoxDiv.appendTo("div.addTemplate");
+                        $("<br>").appendTo("div.addTemplate");
+                    }
+                    break;
+                case 2:
+                    var i;
+                    for (i = 0; i < counter; i++) {
+                        // <!--dynamic create checkbox -->
+                        var temp = "textbox" + i;
+                        var textbox = document.getElementById(temp).value;
+
+                        var newTextBoxDiv = $(document.createElement('label'));
+                        newTextBoxDiv.after().html('<input type="radio" name="textbox' + counter +
+                            '" id="radio' + counter + '" value="1" > ' + textbox + '');
+
+                        newTextBoxDiv.appendTo("div.addTemplate");
+                        $("<br>").appendTo("div.addTemplate");
+                    }
+                    break;
+                case 3:
+                    break;
+                default:
+                    alert("Something Error");
+            }
+
+            $("<br>").appendTo("div.addTemplate");
+
+        }
+
+        function button3() {
+
+            alert("button3");
+
+        }
+
+        $(document).ready(function() {
+            $(".nav-tabs a").click(function() {
+                $(this).tab('show');
+
+            });
+
+            <!-- Button Add & Delete-->
+
+            //Template 2
+            $("#add_element").click(function() {
+                var newTextBoxDiv = $(document.createElement('div'))
+                    .attr("id", 'TextBoxDiv' + counter);
+                newTextBoxDiv.after().html('<input type="text" placeholder="Description" class="form-control" name="textbox' + counter +
+                    '" id="textbox' + counter + '" value="" >');
+                newTextBoxDiv.appendTo("p");
+
+                counter++;
+
+            });
+            $('#del_element').click(function() {
+
+                counter--;
+                $("#TextBoxDiv" + counter).remove();
+                if (counter < 0) {
+                    counter = 0;
+                }
+            });
+
+
+
+
+        });
+        </script>
+</body>
+
+</html>
