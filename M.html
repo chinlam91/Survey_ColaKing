@@ -7,7 +7,7 @@
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css"> //
+    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -46,13 +46,13 @@
                 <div class="col-md-6">
                     <ul class="nav nav-tabs">
                         <li class="active">
-                            <a href="#template1">Template 1</a>
+                            <a href="#template1">Content 1</a>
                         </li>
                         <li>
-                            <a href="#template2">Template 2</a>
+                            <a href="#template2">Content 2</a>
                         </li>
                         <li>
-                            <a href="#template3">Template 3</a>
+                            <a href="#template3">Content 3</a>
                         </li>
                     </ul>
                     <div class="tab-content">
@@ -96,11 +96,11 @@
                                         <img src="http://cdn0.techbang.com.tw/system/images/174427/medium/ae3c3004d8a8cc5734bca12c07cc4a9c.png?1407982994" style="height:20px;weight:10px">
                                     </label>
                                     <br>
-                                    <input type="button" value="+" id="add_element">
+                                    <input type="button" value="+" id="add_element" class="btn btn-primary">
                                     <input type="button" value="-" id="del_element">
                                     <br>
                                     <p></p>
-                                    <button onclick="button2()" class="btn btn-primary">Add</button>
+                                    <button onclick=b"utton2()" class="btn btn-primary">Add</button>
                                 </div>
                             </form>
                         </div>
@@ -149,7 +149,6 @@
             </div>
         </div>
         <script>
-        <!--abc-->
         var counter = 0;
 
         function button1() {
@@ -221,6 +220,12 @@
                     }
                     break;
                 case 3:
+                    var i;
+                    for (i = 0; i < counter; i++) {
+                        
+
+
+                    }
                     break;
                 default:
                     alert("Something Error");
@@ -251,6 +256,9 @@
                 newTextBoxDiv.after().html('<input type="text" placeholder="Description" class="form-control" name="textbox' + counter +
                     '" id="textbox' + counter + '" value="" >');
                 newTextBoxDiv.appendTo("p");
+                
+                var button = $(document.createElement('button'));
+                button.appendTo("p");
 
                 counter++;
 
