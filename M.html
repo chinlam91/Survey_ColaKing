@@ -1,6 +1,6 @@
 <!DOCTYPE>
 <html>
-<!--testing-->
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -97,10 +97,10 @@
                                     </label>
                                     <br>
                                     <input type="button" value="+" id="add_element" class="btn btn-primary">
-                                    <input type="button" value="-" id="del_element">
+                                    <!-- <input type="button" value="-" id="del_element"> -->
                                     <br>
                                     <p></p>
-                                    <button onclick=b"utton2()" class="btn btn-primary">Add</button>
+                                    <button onclick="button2()" class="btn btn-primary">Add</button>
                                 </div>
                             </form>
                         </div>
@@ -156,26 +156,26 @@
             //Template 1 title
             var text = document.createElement("label");
             $(text).text(document.getElementById('titleInput1').value);
-            $(text).appendTo("div.addTemplate");
-            $("<br>").appendTo("div.addTemplate");
+            $(text).appendTo('div.addTemplate');
+            $('<br>').appendTo('div.addTemplate');
 
             //Template 1 textbar
             var textbar = $(document.createElement('input')).attr({
-                type: "text",
-                class: "form-control",
+                type: 'text',
+                class: 'form-control',
                 placeholder: document.getElementById('hintText1').value
 
             });
 
-            $(textbar).appendTo("div.addTemplate");
-            $("<br>").appendTo("div.addTemplate");
+            $(textbar).appendTo('div.addTemplate');
+            $('<br>').appendTo('div.addTemplate');
         }
-
+        //template 2
         function button2() {
             var title = document.createElement('label');
             $(title).text(document.getElementById('titleInput2').value);
-            $(title).appendTo("div.addTemplate");
-            $("<br>").appendTo("div.addTemplate");
+            $(title).appendTo('div.addTemplate');
+            $('<br>').appendTo('div.addTemplate');
 
 
             var obj = 0;
@@ -193,56 +193,50 @@
                     var i;
                     for (i = 0; i < counter; i++) {
                         // <!--dynamic create checkbox -->
-                        var temp = "textbox" + i;
+                        var temp = 'textbox' + i;
                         var textbox = document.getElementById(temp).value;
 
                         var newTextBoxDiv = $(document.createElement('label'));
                         newTextBoxDiv.after().html('<input type="checkbox" name="textbox' + counter +
                             '" id="textbox' + counter + '" value="1" > ' + textbox + '');
 
-                        newTextBoxDiv.appendTo("div.addTemplate");
-                        $("<br>").appendTo("div.addTemplate");
+                        newTextBoxDiv.appendTo('div.addTemplate');
+                        $('<br>').appendTo('div.addTemplate');
                     }
                     break;
                 case 2:
                     var i;
                     for (i = 0; i < counter; i++) {
                         // <!--dynamic create checkbox -->
-                        var temp = "textbox" + i;
+                        var temp = 'textbox' + i;
                         var textbox = document.getElementById(temp).value;
 
                         var newTextBoxDiv = $(document.createElement('label'));
                         newTextBoxDiv.after().html('<input type="radio" name="textbox' + counter +
                             '" id="radio' + counter + '" value="1" > ' + textbox + '');
 
-                        newTextBoxDiv.appendTo("div.addTemplate");
-                        $("<br>").appendTo("div.addTemplate");
+                        newTextBoxDiv.appendTo('div.addTemplate');
+                        $('<br>').appendTo('div.addTemplate');
                     }
                     break;
                 case 3:
-                    var i;
-                    for (i = 0; i < counter; i++) {
-                        
-
-
-                    }
                     break;
                 default:
-                    alert("Something Error");
+                    alert('Something Error');
             }
 
-            $("<br>").appendTo("div.addTemplate");
+            $('<br>').appendTo('div.addTemplate');
 
         }
 
         function button3() {
 
-            alert("button3");
+            alert('button3');
 
         }
 
         $(document).ready(function() {
-            $(".nav-tabs a").click(function() {
+            $('.nav-tabs a').click(function() {
                 $(this).tab('show');
 
             });
@@ -250,31 +244,27 @@
             <!-- Button Add & Delete-->
 
             //Template 2
-            $("#add_element").click(function() {
-                var newTextBoxDiv = $(document.createElement('div'))
-                    .attr("id", 'TextBoxDiv' + counter);
-                newTextBoxDiv.after().html('<input type="text" placeholder="Description" class="form-control" name="textbox' + counter +
-                    '" id="textbox' + counter + '" value="" >');
-                newTextBoxDiv.appendTo("p");
-                
-                var button = $(document.createElement('button'));
-                button.appendTo("p");
+            $('#add_element').click(function() {
 
+                var newTextBoxDiv = $(document.createElement('form')).attr({
+
+                    "id": 'TextBoxDiv' + counter,
+                    "class": "form-inline",
+                    "role": "form"
+                });
+                newTextBoxDiv.after().html('<input type="text" placeholder="Description" class="form-control" name="textbox' + counter + '" id="textbox' + counter + '"><button class="btn btn-primary" id="button_del"+' + counter + '>-</button>');
+
+                newTextBoxDiv.appendTo('p');
                 counter++;
-
             });
-            $('#del_element').click(function() {
+            // $('#del_element').click(function() {
 
-                counter--;
-                $("#TextBoxDiv" + counter).remove();
-                if (counter < 0) {
-                    counter = 0;
-                }
-            });
-
-
-
-
+            //     counter--;
+            //     $("#TextBoxDiv" + counter).remove();
+            //     if (counter < 0) {
+            //         counter = 0;
+            //     }
+            // });
         });
         </script>
 </body>
