@@ -99,7 +99,8 @@
                                     <input type="button" value="+" id="add_element" class="btn btn-primary">
                                     <!-- <input type="button" value="-" id="del_element"> -->
                                     <br>
-                                    <p></p>
+                                    <p>
+                                    </p>
                                     <button onclick="button2()" class="btn btn-primary">Add</button>
                                 </div>
                             </form>
@@ -141,7 +142,7 @@
                         <div class="form-group">
                             <label>Preview</label>
                             <hr>
-                            <div class="addTemplate"></div>
+                            <div class="addTemplate" id="template"></div>
                             <button onclick="submit()" class="btn btn-primary">Submit</button>
                         </div>
                     </form>
@@ -150,7 +151,6 @@
         </div>
         <script>
         var counter = 0;
-
         function button1() {
 
             //Template 1 title
@@ -207,7 +207,7 @@
                 case 2:
                     var i;
                     for (i = 0; i < counter; i++) {
-                        // <!--dynamic create checkbox -->
+                         <!--dynamic create checkbox -->
                         var temp = 'textbox' + i;
                         var textbox = document.getElementById(temp).value;
 
@@ -220,6 +220,20 @@
                     }
                     break;
                 case 3:
+                    <!-- Dynamic create optional -->
+                    var x = document.createElement("SELECT");
+                    x.setAttribute("id", "mySelect");
+                    x.setAttribute("class","form-control");
+                    document.getElementById('template').appendChild(x);
+                    var i;
+                    for (i = 0; i < counter; i++) {
+                        var temp = 'textbox' + i;
+                        var z = document.createElement("option");
+                        z.setAttribute("value", "volvocar");
+                        var t = document.createTextNode(document.getElementById(temp).value);
+                        z.appendChild(t);
+                        document.getElementById("mySelect").appendChild(z);
+                    }
                     break;
                 default:
                     alert('Something Error');
@@ -252,7 +266,7 @@
                     "class": "form-inline",
                     "role": "form"
                 });
-                newTextBoxDiv.after().html('<input type="text" placeholder="Description" class="form-control" name="textbox' + counter + '" id="textbox' + counter + '"><button class="btn btn-primary" id="button_del"+' + counter + '>-</button>');
+                newTextBoxDiv.after().html('<input type="text" placeholder="Description" class="form-control" name="textbox' + counter + '" id="textbox' + counter + '"><button class="btn btn-primary" onclick="button"+' + counter + '() id="button_del"+' + counter + '>-</button>');
 
                 newTextBoxDiv.appendTo('p');
                 counter++;
